@@ -1,0 +1,31 @@
+==50626== Cachegrind, a cache and branch-prediction profiler
+==50626== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==50626== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==50626== Command: /home/mloukhnati/Documents/5IF/pc_cpu/open_mp/question_2/new_parallelization/target/atomic -N 16 -M 13 -C 3-nrepeat 1
+==50626== Parent PID: 18818
+==50626== 
+--50626-- warning: L3 cache found, using its data for the LL simulation.
+--50626-- warning: specified LL cache: line_size 64  assoc 11  total_size 37,486,592
+--50626-- warning: simulated LL cache: line_size 64  assoc 18  total_size 37,748,736
+==50626== 
+==50626== Process terminating with default action of signal 2 (SIGINT)
+==50626==    at 0x10AEA0: main._omp_fn.0 (in /home/mloukhnati/Documents/5IF/pc_cpu/open_mp/question_2/new_parallelization/target/atomic)
+==50626==    by 0x4B9EC0D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==50626==    by 0x4C7FAC2: start_thread (pthread_create.c:442)
+==50626==    by 0x4D10BF3: clone (clone.S:100)
+==50626== 
+==50626== I   refs:      19,269,588,995
+==50626== I1  misses:             2,444
+==50626== LLi misses:             2,354
+==50626== I1  miss rate:           0.00%
+==50626== LLi miss rate:           0.00%
+==50626== 
+==50626== D   refs:       4,309,424,609  (4,040,743,653 rd   + 268,680,956 wr)
+==50626== D1  misses:     1,077,392,607  (1,010,271,665 rd   +  67,120,942 wr)
+==50626== LLd misses:       571,336,710  (  504,216,650 rd   +  67,120,060 wr)
+==50626== D1  miss rate:           25.0% (         25.0%     +        25.0%  )
+==50626== LLd miss rate:           13.3% (         12.5%     +        25.0%  )
+==50626== 
+==50626== LL refs:        1,077,395,051  (1,010,274,109 rd   +  67,120,942 wr)
+==50626== LL misses:        571,339,064  (  504,219,004 rd   +  67,120,060 wr)
+==50626== LL miss rate:             2.4% (          2.2%     +        25.0%  )

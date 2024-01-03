@@ -1,0 +1,37 @@
+set term pngcairo dashed size 1280,720
+set output 'compared_reduction_default_dynamic_dynamic_chunk_cores.png'
+set logscale y 
+set key left top 
+set multiplot layout 2,2 
+
+
+# CORE 1 SUBPLOT 
+## Chunks
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_1_core_1_stat.dat" using ($1+$2):3 lc 1 with lp title "chunk 2^1", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_2_core_1_stat.dat" using ($1+$2):3 lc 3 with lp title "chunk 2^2", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_3_core_1_stat.dat" using ($1+$2):3 lc 4 with lp title "chunk 2^3","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_4_core_1_stat.dat" using ($1+$2):3  lc 5 with lp title "chunk 2^4","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_5_core_1_stat.dat" using ($1+$2):3 lc 6 with lp title "chunk 2^5","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_6_core_1_stat.dat" using ($1+$2):3 lc 7 with lp title "chunk 2^6","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_7_core_1_stat.dat" using ($1+$2):3 lc 8 with lp title "chunk 2^7","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_8_core_1_stat.dat" using ($1+$2):3 lc 9 with lp title "chunk 2^8","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_9_core_1_stat.dat" using ($1+$2):3 lc 10 with lp title "chunk 2^9",\
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_1_stats.dat" using ($1+$2):3 dt 4 lc 11 with lp title "default", \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_1_stat.dat" using ($1+$2):3 dt 5 lc 12 with lp title "dynamic"
+
+# CORE 2 SUBPLOT
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_1_core_2_stat.dat" using ($1+$2):3 lc 1 with lp title "chunk 2^1", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_2_core_2_stat.dat" using ($1+$2):3 lc 3 with lp title "chunk 2^2", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_3_core_2_stat.dat" using ($1+$2):3 lc 4 with lp title "chunk 2^3","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_4_core_2_stat.dat" using ($1+$2):3  lc 5 with lp title "chunk 2^4","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_5_core_2_stat.dat" using ($1+$2):3 lc 6 with lp title "chunk 2^5","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_6_core_2_stat.dat" using ($1+$2):3 lc 7 with lp title "chunk 2^6","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_7_core_2_stat.dat" using ($1+$2):3 lc 8 with lp title "chunk 2^7","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_8_core_2_stat.dat" using ($1+$2):3 lc 9 with lp title "chunk 2^8","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_9_core_2_stat.dat" using ($1+$2):3 lc 10 with lp title "chunk 2^9",\
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_2_stats.dat" using ($1+$2):3 dt 4 lc 11 with lp title "default", \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_2_stat.dat" using ($1+$2):3 dt 5 lc 12 with lp title "dynamic"
+
+
+
+
+# CORE 3 SUBPLOT
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_1_core_3_stat.dat" using ($1+$2):3 lc 1 with lp title "chunk 2^1", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_2_core_3_stat.dat" using ($1+$2):3 lc 3 with lp title "chunk 2^2", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_3_core_3_stat.dat" using ($1+$2):3 lc 4 with lp title "chunk 2^3","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_4_core_3_stat.dat" using ($1+$2):3  lc 5 with lp title "chunk 2^4","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_5_core_3_stat.dat" using ($1+$2):3 lc 6 with lp title "chunk 2^5","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_6_core_3_stat.dat" using ($1+$2):3 lc 7 with lp title "chunk 2^6","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_7_core_3_stat.dat" using ($1+$2):3 lc 8 with lp title "chunk 2^7","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_8_core_3_stat.dat" using ($1+$2):3 lc 9 with lp title "chunk 2^8","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_9_core_3_stat.dat" using ($1+$2):3 lc 10 with lp title "chunk 2^9" , \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_3_stats.dat" using ($1+$2):3 dt 4 lc 11 with lp title "default", \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_3_stat.dat" using ($1+$2):3 dt 5 lc 12 with lp title "dynamic"
+
+# CORE 4 SUBPLOT
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_1_core_4_stat.dat" using ($1+$2):3 lc 1 with lp title "chunk 2^1", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_2_core_4_stat.dat" using ($1+$2):3 lc 3 with lp title "chunk 2^2", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_3_core_4_stat.dat" using ($1+$2):3 lc 4 with lp title "chunk 2^3","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_4_core_4_stat.dat" using ($1+$2):3  lc 5 with lp title "chunk 2^4","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_5_core_4_stat.dat" using ($1+$2):3 lc 6 with lp title "chunk 2^5","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_6_core_4_stat.dat" using ($1+$2):3 lc 7 with lp title "chunk 2^6","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_7_core_4_stat.dat" using ($1+$2):3 lc 8 with lp title "chunk 2^7","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_8_core_4_stat.dat" using ($1+$2):3 lc 9 with lp title "chunk 2^8","< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_chunk_9_core_4_stat.dat" using ($1+$2):3 lc 10 with lp title "chunk 2^9", \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_4_stats.dat" using ($1+$2):3 dt 4 lc 11 with lp title "default", \
+"< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_4_stat.dat" using ($1+$2):3 dt 5 lc 12 with lp title "dynamic"
+
+#"dat/min_reduction_dynamic_core_1_stat.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction dynamic",
+
+unset multiplot
+
+
+

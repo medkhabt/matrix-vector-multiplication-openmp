@@ -1,0 +1,9 @@
+==55417== Cachegrind, a cache and branch-prediction profiler
+==55417== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==55417== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==55417== Command: ../../sequential -N 14 -M 16 -nrepeat 1
+==55417== Parent PID: 50487
+==55417== 
+--55417-- warning: L3 cache found, using its data for the LL simulation.
+--55417-- warning: specified LL cache: line_size 64  assoc 11  total_size 37,486,592
+--55417-- warning: simulated LL cache: line_size 64  assoc 18  total_size 37,748,736

@@ -1,0 +1,4 @@
+set logscale xy
+set key autotitle columnhead
+#plot "cache.dat" using 1:2:(sprintf("(%d,%d)", $9, $10)) with labels point pt 7 notitle
+plot "cache.dat" using 1:2 lc 1, "cache.dat" using 1:3 lc 2

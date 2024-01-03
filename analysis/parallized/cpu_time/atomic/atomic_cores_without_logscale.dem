@@ -1,0 +1,21 @@
+set term png size 1280,720
+set output 'atomic_cores_without_logscale.png'
+set key left top 
+set multiplot layout 2,3 
+
+plot "avg_atomic_stats_core_1_row.dat"  title "core 1 time per row" lc 10 with lp, "avg_atomic_stats_core_1_col.dat"  title "time per col" lc 12 with lp 
+
+plot "avg_atomic_stats_core_2_row.dat"  title "core 2 time per row" lc 10 with lp, "avg_atomic_stats_core_2_col.dat"  title "time per col" lc 12  with lp 
+
+plot "avg_atomic_stats_core_3_row.dat"  title "core 3 time per row" lc 10 with lp, "avg_atomic_stats_core_3_col.dat"  title "time per col" lc 12  with lp 
+
+plot "avg_atomic_stats_core_4_row.dat"  title "core 4 time per row" lc 10 with lp, "avg_atomic_stats_core_4_col.dat"  title "time per col" lc 12  with lp 
+
+plot "avg_atomic_stats_core_1_row.dat"  title " core 1 time per row" with lp, "avg_atomic_stats_core_2_row.dat"  title " core 2 time per row" with lp, "avg_atomic_stats_core_3_row.dat"  title "core 3 time per row" with lp , "avg_atomic_stats_core_4_row.dat"  title "core 4 time per row" with lp
+
+plot "avg_atomic_stats_core_1_col.dat"  title " core 1 time per col" with lp, "avg_atomic_stats_core_2_col.dat"  title " core 2 time per col" with lp, "avg_atomic_stats_core_3_col.dat"  title "core 3 time per col" with lp, "avg_atomic_stats_core_4_col.dat"  title "core 4 time per col" with lp
+
+unset multiplot
+
+
+

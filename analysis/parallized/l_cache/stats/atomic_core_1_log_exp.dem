@@ -1,0 +1,13 @@
+set terminal png size 1280,720
+set output 'atomic_cores_1_cache_exp_log.png'
+
+set multiplot layout 2,2 
+
+plot "cache_atomic_core_1.log" using 9:(exp($4)):(($4 >= 12) ? sprintf("%d", $10): sprintf(" "))  with labels tc lt 1 point pt 1 lc 1 offset char -1,-1  font ',9' title "D1 cache miss rate  by rows", "cache_atomic_core_1.log" using 10:(exp($4)):(($4 >= 12) ? sprintf("%d", $9): sprintf(" ")) with labels tc lt 3 point pt 3 lc 3 offset char -1,-1 font ',9' title "D1 cache miss rate by cols"
+plot  "cache_atomic_core_1.log" using 9:(exp($5)):(($5 >= 11) ? sprintf("%d", $10): sprintf(" ")) with labels tc lt 1 point pt 1 lc 1 offset char -1,-1 font ',9' title "LLD c mr ", "cache_atomic_core_1.log" using 10:(exp($5)):(($5 >= 11) ? sprintf("%d", $9):sprintf(" "))  with labels tc lt 3 point pt 3 lc 3 offset char -1,-1  font ',9' title "LLD c mr"  
+
+set logscale y 
+plot "cache_atomic_core_1.log" using 9:4:(($4 <= 11) ? sprintf("%d", $10):sprintf(" ")) with labels tc lt 1 point pt 1 lc 1 offset char 1,1 title "D1 cache miss rate  by rows", "cache_atomic_core_1.log" using 10:4:(($4 <= 11) ? sprintf("%d", $9):sprintf(" ")) with labels tc lt 3 point pt 3 lc 3 offset char 1,1 title "D1 cache miss rate by cols"
+plot  "cache_atomic_core_1.log" using 9:5:(($5 <= 3) ? sprintf("%d", $10):sprintf(" ")) with labels tc lt 1 point pt 1 lc 1 offset char 1,1 title "LLD cache miss rate  by rows", "cache_atomic_core_1.log" using 10:5:(($5 <=3) ? sprintf("%d", $9):sprintf(" ")) with labels tc lt 3 point pt 3 lc 3 offset char 1,1 title "LLD cache miss rate by cols"  
+
+unset multiplot

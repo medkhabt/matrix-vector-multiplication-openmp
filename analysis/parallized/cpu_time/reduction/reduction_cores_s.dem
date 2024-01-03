@@ -1,0 +1,23 @@
+set term png size 1280,720
+set output 'reduction_cores_size.png'
+set logscale y 
+set key left top 
+set multiplot layout 2,2 
+
+plot "dat/reduction_core_1_stats.dat" using ($1+$2):3 title "core 1" lc 10,  "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_1_stats.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp  , "dat/min_reduction_core_1_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with labels tc lt 1 point pt 1 lc 1 offset char 2,-1 font ",8"
+
+plot "dat/reduction_core_2_stats.dat" using ($1+$2):3:(sprintf("(%d,%d)", $1, $2)) title "core 2" lc 10,    "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_2_stats.dat" using ($1+$2):3 lw 2 lc 3 with lp , "dat/min_reduction_core_2_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with labels tc lt 1 point pt 1 lc 1 offset char 2,-1 font ",8" 
+plot "dat/reduction_core_3_stats.dat" using ($1+$2):3:(sprintf("(%d,%d)", $1, $2)) title "core 3" lc 10,    "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_3_stats.dat" using ($1+$2):3 lw 2 lc 3 with lp ,"dat/min_reduction_core_3_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with labels tc lt 1 point pt 1 lc 1 offset char 2,-1 font ",8" 
+plot "dat/reduction_core_4_stats.dat" using ($1+$2):3:(sprintf("(%d,%d)", $1, $2)) title "core 4" lc 10,    "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_4_stats.dat" using ($1+$2):3 lw 2 lc 3 with lp ,"dat/min_reduction_core_4_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with labels tc lt 1 point pt 1 lc 1 offset char 2,-1 font ",8" 
+
+
+
+
+#plot "avg_reduction_stats_core_1_row.dat"  title " core 1 time per row" with lp, "avg_reduction_stats_core_2_row.dat"  title " core 2 time per row" with lp, "avg_reduction_stats_core_3_row.dat"  title "core 3 time per row" with lp , "avg_reduction_stats_core_4_row.dat"  title "core 4 time per row" with lp
+
+#plot "avg_reduction_stats_core_1_col.dat"  title " core 1 time per col" with lp, "avg_reduction_stats_core_2_col.dat"  title " core 2 time per col" with lp, "avg_reduction_stats_core_3_col.dat"  title "core 3 time per col" with lp, "avg_reduction_stats_core_4_col.dat"  title "core 4 time per col" with lp
+
+unset multiplot
+
+
+

@@ -1,0 +1,34 @@
+==58234== Cachegrind, a cache and branch-prediction profiler
+==58234== Copyright (C) 2002-2017, and GNU GPL'd, by Nicholas Nethercote et al.
+==58234== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==58234== Command: ../../sequential -N 18 -M 15 -nrepeat 1
+==58234== Parent PID: 50487
+==58234== 
+--58234-- warning: L3 cache found, using its data for the LL simulation.
+--58234-- warning: specified LL cache: line_size 64  assoc 11  total_size 37,486,592
+--58234-- warning: simulated LL cache: line_size 64  assoc 18  total_size 37,748,736
+==58234== 
+==58234== Process terminating with default action of signal 11 (SIGSEGV)
+==58234==  Access not within mapped region at address 0x405D000
+==58234==    at 0x1099E2: main (in /home/mloukhnati/Documents/5IF/pc_cpu/open_md/question_2/sequential)
+==58234==  If you believe this happened as a result of a stack
+==58234==  overflow in your program's main thread (unlikely but
+==58234==  possible), you can try to increase the size of the
+==58234==  main thread stack using the --main-stacksize= flag.
+==58234==  The main thread stack size used in this run was 8388608.
+==58234== 
+==58234== I   refs:      4,849,268
+==58234== I1  misses:        2,028
+==58234== LLi misses:        1,955
+==58234== I1  miss rate:      0.04%
+==58234== LLi miss rate:      0.04%
+==58234== 
+==58234== D   refs:      2,619,683  (2,118,412 rd   + 501,271 wr)
+==58234== D1  misses:       54,632  (   15,295 rd   +  39,337 wr)
+==58234== LLd misses:       47,069  (    8,607 rd   +  38,462 wr)
+==58234== D1  miss rate:       2.1% (      0.7%     +     7.8%  )
+==58234== LLd miss rate:       1.8% (      0.4%     +     7.7%  )
+==58234== 
+==58234== LL refs:          56,660  (   17,323 rd   +  39,337 wr)
+==58234== LL misses:        49,024  (   10,562 rd   +  38,462 wr)
+==58234== LL miss rate:        0.7% (      0.2%     +     7.7%  )

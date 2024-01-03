@@ -1,0 +1,6 @@
+set key autotitle columnhead
+
+plot "cache.dat" using 2:3 lc 3 title "lld per d1", "av_d1_lld1.dat" lc 15 title "average lld per d1" with linespoints 
+
+#plot 'abc.dat' using 1:2:(sprintf("(%d, %d)", $1, $2)) with labels notitle
+

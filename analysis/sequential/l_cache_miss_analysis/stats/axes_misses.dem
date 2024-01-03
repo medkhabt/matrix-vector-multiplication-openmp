@@ -1,0 +1,6 @@
+#set logscale y
+set key autotitle columnhead
+
+plot "cache.dat" using 9:4 lc 3 title "d1 per row"
+
+#"cache.dat" using 10:4 lc 4 title "d1 per col"

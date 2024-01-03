@@ -1,0 +1,8 @@
+set term pngcairo dashed size 1280,720
+set output 'reduction_atomic_comparaison.png'
+set logscale y 
+set key left top 
+
+plot "avg_atomic_stats_col.dat" title "avg atomic time per col" lc 12  with linespoints, "avg_atomic_stats_row.dat" title "avg atomic time per row" lc 10 with linespoints , "avg_reduction_stats_col.dat" title "avg reduction time per col" dt 4 lc 12  with linespoints, "avg_reduction_stats_row.dat" title "avg reduction time per row" dt 4 lc 10 with linespoints  
+
+

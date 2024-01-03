@@ -1,0 +1,21 @@
+set term png size 1280,720
+set output 'compare_dynamic_to_static_scheduling.png'
+set logscale y 
+set key left top 
+set multiplot layout 2,2 
+
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_1_stat.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp title "reduction dynamic lab" , "dat/min_reduction_dynamic_core_1_stat.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction dynamic", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_1_stats.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 4 with lp title "reduction static lab params", "dat/min_reduction_core_1_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction static"
+
+
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_2_stat.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp title "reduction dynamic lab" , "dat/min_reduction_dynamic_core_2_stat.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction dynamic", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_2_stats.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 4 with lp title "reduction static lab params", "dat/min_reduction_core_3_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction static"
+
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_3_stat.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp title "reduction dynamic lab" , "dat/min_reduction_dynamic_core_3_stat.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction dynamic", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_3_stats.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 4 with lp title "reduction static lab params", "dat/min_reduction_core_3_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction static"
+
+
+
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_4_stat.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp title "reduction dynamic lab" , "dat/min_reduction_dynamic_core_4_stat.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction dynamic", "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_core_4_stats.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 4 with lp title "reduction static lab params", "dat/min_reduction_core_4_stats_s.dat" using 1:4:(sprintf("(%d,%d)", $2, $3)) with lp title "min reduction static"
+
+unset multiplot
+
+
+

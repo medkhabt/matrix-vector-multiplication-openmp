@@ -1,0 +1,37 @@
+set terminal postscript landscape enhanced color "Helvetica" 20
+set encoding iso_8859_1
+set output "test.ps"
+
+
+
+
+set key 
+
+set pm3d map
+# I need to change this afterward to be in sync with th data 
+set palette defined (1 "blue", 7  "green", 15 "red")
+
+
+set yrange [0.0000 : 0.03]
+set xrange [1:15] 
+# this is the metric for the cpu_time 
+set cbrange [1:15] 
+
+# the tics ? 
+set ytic 0.0000,0.01, 0.03  nomirror  font "Helvetica"
+set cbtic 1,1,15 nomirror font "Helvetica"
+set xtic 1,1,15 nomirror rotate font "Helvetica"
+
+
+set format y "%.2f"
+set format x "%.2f"
+set format cb "%.4f"
+
+
+set xlabel 'Row size 2^N' font "Helvetica, 30"
+set ylabel 'CPU TIME' font "Helvetica, 30"
+
+set border lw  2
+
+plot 'stats.dat' u 2:4:3 w p lw 6 palette t ''
+

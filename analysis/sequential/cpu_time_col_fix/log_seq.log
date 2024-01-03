@@ -1,0 +1,5 @@
+  Total size S = 4194304 N = 4096 M = 1024
+  Computed result for 4096 x 1024 is 4194304.000000
+  N( 4096 ) M( 1024 ) nrepeat ( 100 ) problem( 33.5954 MB ) time( 0.542676 s ) bandwidth( 6.19069 GB/s )
+the value of nsplits is : 1 
+ 

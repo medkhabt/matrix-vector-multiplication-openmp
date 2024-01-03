@@ -1,0 +1,21 @@
+set term png size 1280,720
+set output 'boxplot_l1cache.png'
+
+set multiplot layout 1,4 
+
+set style fill solid 0.5 border -1
+set style boxplot outliers pointtype 7
+set style data boxplot
+set boxwidth  0.5
+set pointsize 0.5
+
+set xtics auto 
+set yrange [0:4]
+
+plot "cache.dat"  using (1):4:(0):9 title "l1 missrate per row count"
+plot "cache.dat"  using (1):4:(0):10 title "l1 missrate per col count"
+plot "cache.dat"  using (1):5:(0):9 title "l3 missrate per row count"
+plot "cache.dat"  using (1):5:(0):10 title "l3 missrate per col count"
+
+
+unset multiplot

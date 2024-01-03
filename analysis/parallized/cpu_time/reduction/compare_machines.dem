@@ -1,0 +1,10 @@
+set term png size 1280,720
+set output '2D-LinuxVS3D-Linux.png'
+set logscale y 
+set key left top 
+
+plot "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/reduction_dynamic_core_1_stat.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 3 with lp title "linux 2d" , "< awk '{if($1%2==0 && $2==($1-1)){print $0}}' dat/core1_dynamic_cmp_test.dat" using ($1+$2):3:(sprintf("%d,d")) lw 2 lc 4 with lp title "3D linux"
+
+
+
+

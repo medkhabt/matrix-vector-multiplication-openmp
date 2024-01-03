@@ -1,0 +1,8 @@
+set term pngcairo dashed size 1280,720
+set output 'atom_atom_reversed_comparaison.png'
+set logscale y 
+set key left top 
+
+plot "atomic/avg_atomic_stats_col.dat" title "avg atomic time per col" lc 12  with linespoints, "atomic/avg_atomic_stats_row.dat" title "avg atomic time per row" lc 10 with linespoints , "atomic_reversed/avg_stats_col.dat" title "avg atomic reversed time per col" dt 4 lc 12  with linespoints, "atomic_reversed/avg_stats_row.dat" title "avg atomic reversed time per row" dt 4 lc 10 with linespoints  
+
+
